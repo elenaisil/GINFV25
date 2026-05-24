@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlaryBerry - My Wishlist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.wishlist-page {
+            padding-top: 100px;
+            background-color: #f8f9fa;
+        }
+        .wishlist-item-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .wishlist-card {
+            transition: transform 0.3s ease;
+        }
+        .wishlist-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="wishlist-page">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="index.html">
+                <img src="img/shopping-bag.png" alt="site-icon">
+                <span class="text-uppercase fw-lighter">FlaryBerry</span>
+            </a>
+            <div class="order-lg-2 nav-btns">
+                    <a href="cart.html" class="btn position-relative text-dark text-decoration-none">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary" id="cartCount">0</span>
+                    </a>
+                    <a href="wishlist.html" class="btn position-relative text-dark text-decoration-none">
+                        <i class="fa fa-heart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary" id="wishlistCount">0</span>
+                    </a>
+                    <a href="orders.html" class="btn position-relative text-dark text-decoration-none">
+                        <i class="fa fa-list"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">0</span>
+                    </a>
+                </div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="collection.html">collection</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="index.html#special">specials</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="popular.html">popular</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="index.html#about">about us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <h2 class="mb-4">My Wishlist</h2>
+        
+        <div class="row" id="wishlistItems">
+            <div class="col-12 text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark py-5 mt-5">
+        <div class="container">
+            <div class="row text-white g-4">
+                <div class="col-md-6 col-lg-3">
+                    <a class="text-uppercase text-decoration-none brand text-white" href="index.html">FlaryBerry</a>
+                    <p class="text-white text-muted mt-3">Thank you so much for supporting us!</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light">Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="my-3"><a href="index.html" class="text-white text-decoration-none text-muted">Home</a></li>
+                        <li class="my-3"><a href="collection.html" class="text-white text-decoration-none text-muted">Collection</a></li>
+                        <li class="my-3"><a href="popular.html" class="text-white text-decoration-none text-muted">Popular</a></li>
+                        <li class="my-3"><a href="index.html#about" class="text-white text-decoration-none text-muted">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light mb-3">Contact Us</h5>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3"><i class="fas fa-map-marked-alt"></i></span>
+                        <span class="fw-light">Pecs, Hungary</span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3"><i class="fas fa-envelope"></i></span>
+                        <span class="fw-light">flaryberry.support@gmail.com</span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3"><i class="fas fa-phone-alt"></i></span>
+                        <span class="fw-light">+36 546 6072</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light mb-3">Follow Us</h5>
+                    <div>
+                        <ul class="list-unstyled d-flex">
+                            <li><a href="#" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const API_URL = 'http://localhost:3000/api';
+        
+        async function loadWishlist() {
+            try {
+                const response = await fetch(`${API_URL}/wishlist`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayWishlist(data.wishlist);
+                    updateWishlistCount();
+                }
+            } catch (error) {
+                console.error('Error loading wishlist:', error);
+                document.getElementById('wishlistItems').innerHTML = '<div class="col-12 text-center py-5"><p class="text-danger">Failed to load wishlist</p></div>';
+            }
+        }
+        
+        function displayWishlist(wishlist) {
+            const container = document.getElementById('wishlistItems');
+            
+            if (wishlist.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center py-5"><p class="text-muted">Your wishlist is empty. <a href="collection.html">Browse products</a></p></div>';
+                return;
+            }
+            
+            container.innerHTML = '';
+            
+            wishlist.forEach(item => {
+                const col = document.createElement('div');
+                col.className = 'col-md-6 col-lg-4 col-xl-3 mb-4';
+                col.innerHTML = `
+                    <div class="card wishlist-card h-100">
+                        <div class="position-relative">
+                            <img src="img/${item.product_image}" class="card-img-top wishlist-item-img w-100" alt="${item.product_name}" style="height: 250px; object-fit: cover;" onerror="this.src='img/product1.jpg'">
+                            <button class="btn btn-danger btn-sm position-absolute top-0 end-0 m-2" onclick="removeFromWishlist(${item.id})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${item.product_name}</h5>
+                            <p class="card-text text-primary fw-bold">€${item.product_price.toFixed(2)}</p>
+                            <div class="rating mb-2">
+                                ${generateStarRating(item.product_rating || 5)}
+                            </div>
+                            <button class="btn btn-primary btn-sm w-100" onclick="addToCartFromWishlist('${item.product_id}', '${item.product_name}', ${item.product_price}, '${item.product_image}', '${item.product_category}')">
+                                <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(col);
+            });
+        }
+        
+        function generateStarRating(rating) {
+            let stars = '';
+            for (let i = 0; i < 5; i++) {
+                if (i < rating) {
+                    stars += '<span class="text-primary"><i class="fas fa-star"></i></span>';
+                } else {
+                    stars += '<span class="text-muted"><i class="far fa-star"></i></span>';
+                }
+            }
+            return stars;
+        }
+        
+        async function addToCartFromWishlist(productId, productName, productPrice, productImage, productCategory) {
+            try {
+                const response = await fetch(`${API_URL}/cart`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        product_id: productId,
+                        product_name: productName,
+                        product_price: productPrice,
+                        product_image: productImage,
+                        product_category: productCategory,
+                        quantity: 1
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showAlert(`${productName} added to cart!`, 'success');
+                    updateCartCount();
+                }
+            } catch (error) {
+                console.error('Error adding to cart:', error);
+                showAlert('Failed to add to cart', 'danger');
+            }
+        }
+        
+        async function removeFromWishlist(wishlistId) {
+            try {
+                const response = await fetch(`${API_URL}/wishlist/${wishlistId}`, {
+                    method: 'DELETE'
+                });
+                
+                if (response.ok) {
+                    loadWishlist();
+                    showAlert('Item removed from wishlist', 'success');
+                }
+            } catch (error) {
+                console.error('Error removing from wishlist:', error);
+                showAlert('Failed to remove item', 'danger');
+            }
+        }
+        
+        async function updateCartCount() {
+            try {
+                const response = await fetch(`${API_URL}/cart`);
+                const data = await response.json();
+                if (data.success && data.cart) {
+                    const count = data.cart.reduce((sum, item) => sum + item.quantity, 0);
+                    const cartBadge = document.getElementById('cartCount');
+                    if (cartBadge) cartBadge.textContent = count;
+                }
+            } catch (error) {
+                console.error('Error updating cart count:', error);
+            }
+        }
+        
+        async function updateWishlistCount() {
+            try {
+                const response = await fetch(`${API_URL}/wishlist`);
+                const data = await response.json();
+                if (data.success && data.wishlist) {
+                    const wishlistBadge = document.getElementById('wishlistCount');
+                    if (wishlistBadge) wishlistBadge.textContent = data.wishlist.length;
+                }
+            } catch (error) {
+                console.error('Error updating wishlist count:', error);
+            }
+        }
+        
+        function showAlert(message, type) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-5`;
+            alertDiv.style.zIndex = '9999';
+            alertDiv.style.minWidth = '300px';
+            alertDiv.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(alertDiv);
+            setTimeout(() => alertDiv.remove(), 3000);
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadWishlist);
+    </script>
+</body>
+</html>

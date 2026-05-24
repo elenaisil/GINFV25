@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlaryBerry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="popular-page">
+    <!--nav bar-->
+    <nav class=" navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" 
+            href="index.html">
+                <img src="img/shopping-bag.png" alt="site-icon">
+                <span class="text-uppercase fw-lighter">FlaryBerry</span>
+            </a>
+            <div class="order-lg-2 nav-btns">
+                    <a href="cart.html" class="btn position-relative text-dark text-decoration-none">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary" id="cartCount">0</span>
+                    </a>
+                    <a href="wishlist.html" class="btn position-relative text-dark text-decoration-none">
+                        <i class="fa fa-heart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary" id="wishlistCount">0</span>
+                    </a>
+                    <a href="orders.html" class="btn position-relative text-dark text-decoration-none">
+                        <i class="fa fa-list"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">0</span>
+                    </a>
+                </div>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle=""
+             data-bs-target="">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item px-2 py-2">
+                    <a class="nav-link text-uppercase text-dark" href="index.html">home</a>
+                </li>
+                <li class="nav-item px-2 py-2">
+                    <a class="nav-link text-uppercase text-dark" href="collection.html">collection</a>
+                </li>
+                <li class="nav-item px-2 py-2">
+                    <a class="nav-link text-uppercase text-dark" href="index.html#special">specials</a>
+                </li>
+                <li class="nav-item px-2 py-2">
+                    <a class="nav-link text-uppercase text-dark" href="#header">popular</a>
+                </li>
+                <li class="nav-item px-2 py-2">
+                    <a class="nav-link text-uppercase text-dark" href="index.html#about">about us</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <!--end of navbar-->
+
+     <!-- popular -->
+<section id="popular" class="py-5">
+    <div class="container">
+        <div class="title text-center py-5">
+            <h2 class="position-relative d-inline-block">Popular Of This Year</h2>
+        </div>
+
+        <div class="special-list row g-0">
+            <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class="special-img position-relative overflow-hidden">
+                    <img src="img/product3.jpg" class="w-100">
+                    <span class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                        <i class="fas fa-heart"></i>
+                    </span>
+                </div>
+                <div class="text-center">
+                    <p class="text-capitalize mt-3 mb-1">Gray Shirt</p>
+                    <span class="fw-bold d-block">€19.99</span>
+                    <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class="special-img position-relative overflow-hidden">
+                    <img src="img/product6.jpg" class="w-100">
+                    <span class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                        <i class="fas fa-heart"></i>
+                    </span>
+                </div>
+                <div class="text-center">
+                    <p class="text-capitalize mt-3 mb-1">Beige Knitted Poncho</p>
+                    <span class="fw-bold d-block">€35.50</span>
+                    <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class="special-img position-relative overflow-hidden">
+                    <img src="img/product9.jpg" class="w-100">
+                    <span class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                        <i class="fas fa-heart"></i>
+                    </span>
+                </div>
+                <div class="text-center">
+                    <p class="text-capitalize mt-3 mb-1">White Pullover</p>
+                    <span class="fw-bold d-block">€27.50</span>
+                    <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class="special-img position-relative overflow-hidden">
+                    <img src="img/product12.jpg" class="w-100">
+                    <span class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                        <i class="fas fa-heart"></i>
+                    </span>
+                </div>
+                <div class="text-center">
+                    <p class="text-capitalize mt-3 mb-1">Black Skirt</p>
+                    <span class="fw-bold d-block">€25.50</span>
+                    <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class="special-img position-relative overflow-hidden">
+                    <img src="img/product15.jpg" class="w-100">
+                    <span class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                        <i class="fas fa-heart"></i>
+                    </span>
+                </div>
+                <div class="text-center">
+                    <p class="text-capitalize mt-3 mb-1">Beige Sneakers</p>
+                    <span class="fw-bold d-block">€39.99</span>
+                    <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class="special-img position-relative overflow-hidden">
+                    <img src="img/product18.jpg" class="w-100">
+                    <span class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                        <i class="fas fa-heart"></i>
+                    </span>
+                </div>
+                <div class="text-center">
+                    <p class="text-capitalize mt-3 mb-1">Nike Green Sneakers</p>
+                    <span class="fw-bold d-block">€69.99</span>
+                    <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class="special-img position-relative overflow-hidden">
+                    <img src="img/product19.jpg" class="w-100">
+                    <span class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                        <i class="fas fa-heart"></i>
+                    </span>
+                </div>
+                <div class="text-center">
+                    <p class="text-capitalize mt-3 mb-1">Spring Collection High Heels</p>
+                    <span class="fw-bold d-block">€99.99</span>
+                    <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class="special-img position-relative overflow-hidden">
+                    <img src="img/product20.jpg" class="w-100">
+                    <span class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                        <i class="fas fa-heart"></i>
+                    </span>
+                </div>
+                <div class="text-center">
+                    <p class="text-capitalize mt-3 mb-1">Slim Jeans</p>
+                    <span class="fw-bold d-block">€49.99</span>
+                    <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end of popular -->
+
+    <footer class = "bg-dark py-5">
+        <div class = "container">
+            <div class = "row text-white g-4">
+                <div class = "col-md-6 col-lg-3">
+                    <a class = "text-uppercase text-decoration-none brand text-white" href = "index.html">FlaryBerry</a>
+                    <p class = "text-white text-muted mt-3">Thank you so much for supporting us!</p>
+                </div>
+
+                <div class = "col-md-6 col-lg-3">
+                    <h5 class = "fw-light">Links</h5>
+                    <ul class = "list-unstyled">
+                        <li class = "my-3">
+                            <a href = "#" class = "text-white text-decoration-none text-muted">
+                                <i class = "fas fa-chevron-right me-1"></i> Home
+                            </a>
+                        </li>
+                        <li class = "my-3">
+                            <a href = "#" class = "text-white text-decoration-none text-muted">
+                                <i class = "fas fa-chevron-right me-1"></i> Collection
+                            </a>
+                        </li>
+                        <li class = "my-3">
+                            <a href = "#" class = "text-white text-decoration-none text-muted">
+                                <i class = "fas fa-chevron-right me-1"></i> Popular
+                            </a>
+                        </li>
+                        <li class = "my-3">
+                            <a href = "#" class = "text-white text-decoration-none text-muted">
+                                <i class = "fas fa-chevron-right me-1"></i> About Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class = "col-md-6 col-lg-3">
+                    <h5 class = "fw-light mb-3">Contact Us</h5>
+                    <div class = "d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class = "me-3">
+                            <i class = "fas fa-map-marked-alt"></i>
+                        </span>
+                        <span class = "fw-light">
+                           Pecs, Hungary
+                        </span>
+                    </div>
+                    <div class = "d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class = "me-3">
+                            <i class = "fas fa-envelope"></i>
+                        </span>
+                        <span class = "fw-light">
+                            flaryberry.support@gmail.com
+                        </span>
+                    </div>
+                    <div class = "d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class = "me-3">
+                            <i class = "fas fa-phone-alt"></i>
+                        </span>
+                        <span class = "fw-light">
+                            +36 546 6072
+                        </span>
+                    </div>
+                </div>
+
+                <div class = "col-md-6 col-lg-3">
+                    <h5 class = "fw-light mb-3">Follow Us</h5>
+                    <div>
+                        <ul class = "list-unstyled d-flex">
+                            <li>
+                                <a href = "#" class = "text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class = "fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href = "#" class = "text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class = "fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href = "#" class = "text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class = "fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href = "#" class = "text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class = "fab fa-pinterest"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer -->
+
+    
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

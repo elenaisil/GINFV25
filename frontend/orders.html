@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlaryBerry - My Orders</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.orders-page {
+            padding-top: 100px;
+            background-color: #f8f9fa;
+        }
+        .order-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .order-status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status-pending { background-color: #ffc107; color: #000; }
+        .status-processing { background-color: #17a2b8; color: #fff; }
+        .status-shipped { background-color: #007bff; color: #fff; }
+        .status-delivered { background-color: #28a745; color: #fff; }
+        .status-cancelled { background-color: #dc3545; color: #fff; }
+    </style>
+</head>
+<body class="orders-page">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="index.html">
+                <img src="img/shopping-bag.png" alt="site-icon">
+                <span class="text-uppercase fw-lighter">FlaryBerry</span>
+            </a>
+            <div class="order-lg-2 nav-btns">
+                    <a href="cart.html" class="btn position-relative text-dark text-decoration-none">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary" id="cartCount">0</span>
+                    </a>
+                    <a href="wishlist.html" class="btn position-relative text-dark text-decoration-none">
+                        <i class="fa fa-heart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary" id="wishlistCount">0</span>
+                    </a>
+                    <a href="orders.html" class="btn position-relative text-dark text-decoration-none">
+                        <i class="fa fa-list"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">0</span>
+                    </a>
+                </div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="collection.html">collection</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="index.html#special">specials</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="popular.html">popular</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="index.html#about">about us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <h2 class="mb-4">My Orders</h2>
+        <div id="ordersList">
+            <div class="text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading orders...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="orderModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Order Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="orderDetails">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark py-5 mt-5">
+        <div class="container">
+            <div class="row text-white g-4">
+                <div class="col-md-6 col-lg-3">
+                    <a class="text-uppercase text-decoration-none brand text-white" href="index.html">FlaryBerry</a>
+                    <p class="text-white text-muted mt-3">Thank you so much for supporting us!</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light">Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="my-3"><a href="index.html" class="text-white text-decoration-none text-muted">Home</a></li>
+                        <li class="my-3"><a href="collection.html" class="text-white text-decoration-none text-muted">Collection</a></li>
+                        <li class="my-3"><a href="popular.html" class="text-white text-decoration-none text-muted">Popular</a></li>
+                        <li class="my-3"><a href="index.html#about" class="text-white text-decoration-none text-muted">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light mb-3">Contact Us</h5>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3"><i class="fas fa-map-marked-alt"></i></span>
+                        <span class="fw-light">Pecs, Hungary</span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3"><i class="fas fa-envelope"></i></span>
+                        <span class="fw-light">flaryberry.support@gmail.com</span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3"><i class="fas fa-phone-alt"></i></span>
+                        <span class="fw-light">+36 546 6072</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light mb-3">Follow Us</h5>
+                    <div>
+                        <ul class="list-unstyled d-flex">
+                            <li><a href="#" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" class="text-white text-decoration-none text-muted fs-4 me-4"><i class="fab fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        //api config
+        const API_URL= 'http://localhost:3000/api';
+        //fetch orders from the db
+        async function loadOrders(){
+            try{
+                const response= await fetch(`${API_URL}/orders`);
+                const data= await response.json();
+                
+                if (data.success){
+                    displayOrders(data.orders);
+                }
+            } catch (error){
+                console.error('Error loading orders:', error);
+                document.getElementById('ordersList').innerHTML = '<div class="text-center py-5"><p class="text-danger">Failed to load orders</p></div>';
+            }
+        }
+        //take orders from the db
+        function displayOrders(orders){
+            const container= document.getElementById('ordersList');
+            
+            if (orders.length=== 0) {
+                container.innerHTML = '<div class="text-center py-5"><p class="text-muted">No orders yet. <a href="collection.html">Start shopping</a></p></div>';
+                return;
+            }
+            
+            container.innerHTML= '';
+            //looping through each order and creating a card for it
+            orders.forEach(order=>{
+                let items = [];
+                try {
+                    items = JSON.parse(order.items);
+                } catch (e) {
+                    items = [];
+                }
+                
+                const statusClass= `status-${order.status}`;
+                const orderDate= new Date(order.created_at).toLocaleDateString();
+                
+                const orderCard= document.createElement('div');
+                orderCard.className= 'card order-card';
+                orderCard.innerHTML= `
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <h6 class="text-muted mb-1">Order #${order.id}</h6>
+                                <small class="text-muted">Placed on ${orderDate}</small>
+                            </div>
+                            <div>
+                                <span class="order-status ${statusClass}">${order.status.toUpperCase()}</span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-8">
+                                <p class="mb-1"><strong>${order.customer_name}</strong></p>
+                                <p class="mb-1 text-muted small">${order.customer_email}</p>
+                                <p class="text-muted small">${order.customer_address}</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <p class="mb-1"><strong>Total: €${order.total_amount.toFixed(2)}</strong></p>
+                                <p class="text-muted small">${items.length} item(s)</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-primary btn-sm" onclick="viewOrderDetails(${order.id})">
+                            <i class="fas fa-eye me-2"></i>View Details
+                        </button>
+                    </div>
+                `;
+                container.appendChild(orderCard);
+            });
+        }
+        //fetch all info for an order
+        async function viewOrderDetails(orderId){
+            try {
+                const response= await fetch(`${API_URL}/orders/${orderId}`);
+                const data= await response.json();
+                
+                if(data.success) {
+                    const order= data.order;
+                 const items = order.items || [];
+                    //html table to show each product
+                   let itemsHtml = '<div class="table-responsive"><table class="table"><thead><tr><th>Product</th><th>Quantity</th><th>Price</th><th>Total</th></tr></thead><tbody>';
+                    items.forEach(item=> {
+                        itemsHtml += `
+                            <tr>
+                                <td>${item.name}</td>
+                                <td>${item.quantity}</td>
+                                <td>€${item.price.toFixed(2)}</td>
+                                <td>€${(item.price * item.quantity).toFixed(2)}</td>
+                            </tr>
+                        `;
+                    });
+                    
+                    itemsHtml += `</tbody><tfoot><tr><td colspan="3"><strong>Grand Total</strong></td><td><strong>€${order.total_amount.toFixed(2)}</strong></td></tr></tfoot></table></div>`;
+                    
+                    document.getElementById('orderDetails').innerHTML= `
+                        <h6>Order #${order.id}</h6>
+                        <p><strong>Customer:</strong> ${order.customer_name}</p>
+                        <p><strong>Email:</strong> ${order.customer_email}</p>
+                        <p><strong>Address:</strong> ${order.customer_address}</p>
+                        <p><strong>Status:</strong> <span class="order-status status-${order.status}">${order.status.toUpperCase()}</span></p>
+                        <p><strong>Date:</strong> ${new Date(order.created_at).toLocaleString()}</p>
+                        <hr>
+                        <h6>Items</h6>
+                        ${itemsHtml}
+                    `;
+                    
+                    new bootstrap.Modal(document.getElementById('orderModal')).show();
+                }
+            }catch (error){
+                console.error('Error loading order details:', error);
+                showAlert('Failed to load order details', 'danger');
+            }
+        }
+        //fetch cart update count
+        async function updateCartCount(){
+            try{
+                const response= await fetch(`${API_URL}/cart`);
+                const data= await response.json();
+                if (data.success && data.cart) {
+                    const count= data.cart.reduce((sum, item) => sum + item.quantity, 0);
+                    const cartBadge= document.getElementById('cartCount');
+                    if (cartBadge) cartBadge.textContent = count;
+                }
+            }catch (error){
+                console.error('Error updating cart count:', error);
+    }
+        }
+        //fecth the wishlist from backend
+        async function updateWishlistCount(){
+            try{
+                const response= await fetch(`${API_URL}/wishlist`);
+                const data= await response.json();
+                if (data.success && data.wishlist) {
+                    const wishlistBadge = document.getElementById('wishlistCount');
+                    if (wishlistBadge) wishlistBadge.textContent = data.wishlist.length;
+                }
+            } catch (error){
+                console.error('Error updating wishlist count:', error);
+            }
+        }
+        
+        function showAlert(message, type){
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-5`;
+            alertDiv.style.zIndex = '9999';
+            alertDiv.style.minWidth = '300px';
+            alertDiv.innerHTML = `${message}<button type="button" class="btn-close" data-bs-dismiss="alert"></button>`;
+            document.body.appendChild(alertDiv);
+            setTimeout(() => alertDiv.remove(), 3000);
+        }
+        
+        document.addEventListener('DOMContentLoaded', ()=>{
+            loadOrders();
+            updateCartCount();
+            updateWishlistCount();
+        });
+    </script>
+</body>
+</html>
