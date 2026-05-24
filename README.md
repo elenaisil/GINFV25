@@ -17,7 +17,7 @@ FlareBerry is a full-stack e-commerce web application for a clothing store. User
 
 ### Step 1: Clone the Repository
 ```bash
-git clone <your-repository-url>
+git clone <repository-url>
 cd E-commerce
 ```
 
